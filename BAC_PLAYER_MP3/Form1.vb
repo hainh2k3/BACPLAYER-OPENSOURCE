@@ -12,6 +12,7 @@ Public Class Form1
 
     Private timeStop As Integer = 1
     Private timeStart As Integer = 0
+    Private amLuong As Integer = 100
     Private tatMay As Boolean = True
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -24,7 +25,8 @@ Public Class Form1
 
         timeStop = Convert.ToInt32(parm(2))
         tatMay = Convert.ToByte(parm(3))
-        listMp3 = parm(4).Split(";")
+        amLuong = Convert.ToInt32(parm(4))
+        listMp3 = parm(5).Split(";")
         'listMp3 = "E:\BACPLAYER\BACPLAYER\BAC_PLAYER_MP3\bin\Debug\NhacMp3\1.mp3;E:\BACPLAYER\BACPLAYER\BAC_PLAYER_MP3\bin\Debug\NhacMp3\3.mp3;E:\BACPLAYER\BACPLAYER\BAC_PLAYER_MP3\bin\Debug\NhacMp3\4.mp3".Split(";")
         'If Now.Hour <> 9 And Now.Hour <> 2 Then
         If File.Exists(Path.Combine(Application.StartupPath, "NgaySinh.txt")) Then
@@ -33,7 +35,7 @@ Public Class Form1
             While Not sReader.EndOfStream
                 Dim d As Object = sReader.ReadLine()
                 If Convert.ToDateTime(d).Day = Today.Day And Convert.ToDateTime(d).Month = Today.Month Then
-                    listMp3(0) = "HappyBirthDay.mp3"
+                    listMp3(0) = "[   ]. HappyBirthDay.mp3"
                     Exit While
                 End If
             End While
@@ -64,7 +66,7 @@ Public Class Form1
         Next
 
         waveOutDevice = New WaveOut()
-        waveOutDevice.Volume = 0.2F
+        'waveOutDevice.Volume = 0.2F
         indexMp3 = 0
         AddHandler waveOutDevice.PlaybackStopped, AddressOf NextSong
         NextSong(waveOutDevice, New StoppedEventArgs())
@@ -87,8 +89,19 @@ Public Class Form1
         '    Exit Sub
         'End If
         Try
-            Me.Text = listMp3(indexMp3)
-            mp3FileReader = New Mp3FileReader(Application.StartupPath & "\NhacMp3\" & listMp3(indexMp3))
+            'Lấy tên file
+            Dim fileNamePlay As String = listMp3(indexMp3).Substring(7)
+            Me.Text = fileNamePlay
+            mp3FileReader = New Mp3FileReader(Application.StartupPath & "\NhacMp3\" & fileNamePlay)
+
+            'Lay muc am luong
+            Dim tmpAmLuong As String = listMp3(indexMp3).Substring(0, 4).Substring(1)
+            If tmpAmLuong = "   " Then
+                waveOutDevice.Volume = amLuong / 100.0F
+            Else
+                waveOutDevice.Volume = Convert.ToInt32(tmpAmLuong) / 100.0F
+            End If
+
             waveOutDevice.Init(mp3FileReader)
             waveOutDevice.Play()
             indexMp3 += 1
@@ -118,14 +131,16 @@ Public Class Form1
             End If
             Application.Exit()
         End If
-        Try
-            If timeStart <= 4 Then waveOutDevice.Volume += 0.2F
-        Catch ex As Exception
-        End Try
-        Try
-            If timeStart >= timeStop - 5 Then waveOutDevice.Volume -= 0.1F
-        Catch ex As Exception
-        End Try
+
+        'Fade am thanh
+        'Try
+        '    If timeStart <= 4 Then waveOutDevice.Volume += 0.2F
+        'Catch ex As Exception
+        'End Try
+        'Try
+        '    If timeStart >= timeStop - 5 Then waveOutDevice.Volume -= 0.1F
+        'Catch ex As Exception
+        'End Try
 
     End Sub
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Thứ hai")
@@ -36,8 +36,6 @@ Partial Class Form1
         Me.treeThuMuc = New System.Windows.Forms.TreeView()
         Me.img = New System.Windows.Forms.ImageList(Me.components)
         Me.cmbTrangThai = New System.Windows.Forms.ComboBox()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.lstTask = New System.Windows.Forms.ListView()
         Me.colTen = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colTiepTheo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -86,15 +84,12 @@ Partial Class Form1
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnThoat = New System.Windows.Forms.ToolStripButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.amluong = New System.Windows.Forms.TrackBar()
+        Me.lblAmLuong = New System.Windows.Forms.Label()
+        Me.btnThietLapAmLuong = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.gThuMuc.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer2.Panel1.SuspendLayout()
-        Me.SplitContainer2.Panel2.SuspendLayout()
-        Me.SplitContainer2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.gDsBaiHat.SuspendLayout()
         Me.tt2.SuspendLayout()
@@ -102,6 +97,7 @@ Partial Class Form1
         Me.GroupBox4.SuspendLayout()
         CType(Me.txtThoiGian, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tt1.SuspendLayout()
+        CType(Me.amluong, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gThuMuc
@@ -109,10 +105,9 @@ Partial Class Form1
         Me.gThuMuc.BackColor = System.Drawing.Color.AliceBlue
         Me.gThuMuc.Controls.Add(Me.treeThuMuc)
         Me.gThuMuc.Controls.Add(Me.cmbTrangThai)
-        Me.gThuMuc.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gThuMuc.Location = New System.Drawing.Point(0, 0)
+        Me.gThuMuc.Location = New System.Drawing.Point(5, 30)
         Me.gThuMuc.Name = "gThuMuc"
-        Me.gThuMuc.Size = New System.Drawing.Size(211, 539)
+        Me.gThuMuc.Size = New System.Drawing.Size(213, 262)
         Me.gThuMuc.TabIndex = 2
         Me.gThuMuc.TabStop = False
         '
@@ -151,7 +146,7 @@ Partial Class Form1
         TreeNode16.Text = "Cả Tuần"
         Me.treeThuMuc.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
         Me.treeThuMuc.SelectedImageIndex = 2
-        Me.treeThuMuc.Size = New System.Drawing.Size(193, 362)
+        Me.treeThuMuc.Size = New System.Drawing.Size(195, 197)
         Me.treeThuMuc.TabIndex = 2
         '
         'img
@@ -174,62 +169,27 @@ Partial Class Form1
         Me.cmbTrangThai.Items.AddRange(New Object() {"Tất cả trạng thái", "Đang được kích hoạt", "Đã ngừng kích hoạt"})
         Me.cmbTrangThai.Location = New System.Drawing.Point(10, 17)
         Me.cmbTrangThai.Name = "cmbTrangThai"
-        Me.cmbTrangThai.Size = New System.Drawing.Size(193, 24)
+        Me.cmbTrangThai.Size = New System.Drawing.Size(195, 24)
         Me.cmbTrangThai.TabIndex = 0
-        '
-        'SplitContainer1
-        '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 28)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.gThuMuc)
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(926, 539)
-        Me.SplitContainer1.SplitterDistance = 211
-        Me.SplitContainer1.TabIndex = 3
-        '
-        'SplitContainer2
-        '
-        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer2.Name = "SplitContainer2"
-        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'SplitContainer2.Panel1
-        '
-        Me.SplitContainer2.Panel1.Controls.Add(Me.lstTask)
-        '
-        'SplitContainer2.Panel2
-        '
-        Me.SplitContainer2.Panel2.Controls.Add(Me.gDsBaiHat)
-        Me.SplitContainer2.Panel2.Controls.Add(Me.gChiTietCauHinh)
-        Me.SplitContainer2.Size = New System.Drawing.Size(711, 539)
-        Me.SplitContainer2.SplitterDistance = 233
-        Me.SplitContainer2.TabIndex = 0
         '
         'lstTask
         '
         Me.lstTask.Activation = System.Windows.Forms.ItemActivation.OneClick
+        Me.lstTask.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstTask.AutoArrange = False
         Me.lstTask.BackColor = System.Drawing.Color.AliceBlue
         Me.lstTask.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colTen, Me.colTiepTheo, Me.colDaChay, Me.colNgayTao})
         Me.lstTask.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.lstTask.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lstTask.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstTask.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lstTask.FullRowSelect = True
         Me.lstTask.GridLines = True
         Me.lstTask.HideSelection = False
-        Me.lstTask.Location = New System.Drawing.Point(0, 0)
+        Me.lstTask.Location = New System.Drawing.Point(221, 31)
         Me.lstTask.Name = "lstTask"
         Me.lstTask.ShowGroups = False
-        Me.lstTask.Size = New System.Drawing.Size(711, 233)
+        Me.lstTask.Size = New System.Drawing.Size(665, 261)
         Me.lstTask.TabIndex = 0
         Me.lstTask.UseCompatibleStateImageBehavior = False
         Me.lstTask.View = System.Windows.Forms.View.Details
@@ -268,15 +228,17 @@ Partial Class Form1
         '
         'gDsBaiHat
         '
+        Me.gDsBaiHat.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gDsBaiHat.BackColor = System.Drawing.Color.White
         Me.gDsBaiHat.Controls.Add(Me.lstMp3)
         Me.gDsBaiHat.Controls.Add(Me.tt2)
-        Me.gDsBaiHat.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gDsBaiHat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gDsBaiHat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.gDsBaiHat.Location = New System.Drawing.Point(429, 0)
+        Me.gDsBaiHat.Location = New System.Drawing.Point(403, 298)
         Me.gDsBaiHat.Name = "gDsBaiHat"
-        Me.gDsBaiHat.Size = New System.Drawing.Size(282, 302)
+        Me.gDsBaiHat.Size = New System.Drawing.Size(484, 372)
         Me.gDsBaiHat.TabIndex = 1
         Me.gDsBaiHat.TabStop = False
         Me.gDsBaiHat.Text = "Danh sách bài hát"
@@ -295,7 +257,7 @@ Partial Class Form1
         Me.lstMp3.MultiSelect = False
         Me.lstMp3.Name = "lstMp3"
         Me.lstMp3.ShowGroups = False
-        Me.lstMp3.Size = New System.Drawing.Size(276, 256)
+        Me.lstMp3.Size = New System.Drawing.Size(478, 326)
         Me.lstMp3.TabIndex = 4
         Me.lstMp3.UseCompatibleStateImageBehavior = False
         Me.lstMp3.View = System.Windows.Forms.View.List
@@ -304,10 +266,10 @@ Partial Class Form1
         '
         Me.tt2.BackColor = System.Drawing.Color.AliceBlue
         Me.tt2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tt2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnThemNhac, Me.btnXoaNhac, Me.ToolStripSeparator3, Me.btnUp, Me.btnDown})
+        Me.tt2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnThemNhac, Me.btnXoaNhac, Me.ToolStripSeparator3, Me.btnUp, Me.btnDown, Me.ToolStripSeparator4, Me.btnThietLapAmLuong})
         Me.tt2.Location = New System.Drawing.Point(3, 18)
         Me.tt2.Name = "tt2"
-        Me.tt2.Size = New System.Drawing.Size(276, 25)
+        Me.tt2.Size = New System.Drawing.Size(478, 25)
         Me.tt2.TabIndex = 3
         Me.tt2.Text = "ToolStrip2"
         '
@@ -352,11 +314,16 @@ Partial Class Form1
         '
         'gChiTietCauHinh
         '
+        Me.gChiTietCauHinh.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gChiTietCauHinh.BackColor = System.Drawing.Color.White
+        Me.gChiTietCauHinh.Controls.Add(Me.Label6)
+        Me.gChiTietCauHinh.Controls.Add(Me.lblAmLuong)
+        Me.gChiTietCauHinh.Controls.Add(Me.GroupBox4)
+        Me.gChiTietCauHinh.Controls.Add(Me.amluong)
+        Me.gChiTietCauHinh.Controls.Add(Me.Label5)
         Me.gChiTietCauHinh.Controls.Add(Me.txtKetThuc)
         Me.gChiTietCauHinh.Controls.Add(Me.chkTatMay)
-        Me.gChiTietCauHinh.Controls.Add(Me.Label6)
-        Me.gChiTietCauHinh.Controls.Add(Me.GroupBox4)
         Me.gChiTietCauHinh.Controls.Add(Me.btnBatDau)
         Me.gChiTietCauHinh.Controls.Add(Me.chkPhatNgauNhien)
         Me.gChiTietCauHinh.Controls.Add(Me.txtThoiGian)
@@ -368,12 +335,11 @@ Partial Class Form1
         Me.gChiTietCauHinh.Controls.Add(Me.Label2)
         Me.gChiTietCauHinh.Controls.Add(Me.txtTenCauHinh)
         Me.gChiTietCauHinh.Controls.Add(Me.Label1)
-        Me.gChiTietCauHinh.Dock = System.Windows.Forms.DockStyle.Left
         Me.gChiTietCauHinh.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gChiTietCauHinh.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.gChiTietCauHinh.Location = New System.Drawing.Point(0, 0)
+        Me.gChiTietCauHinh.Location = New System.Drawing.Point(5, 298)
         Me.gChiTietCauHinh.Name = "gChiTietCauHinh"
-        Me.gChiTietCauHinh.Size = New System.Drawing.Size(429, 302)
+        Me.gChiTietCauHinh.Size = New System.Drawing.Size(392, 372)
         Me.gChiTietCauHinh.TabIndex = 0
         Me.gChiTietCauHinh.TabStop = False
         Me.gChiTietCauHinh.Text = "Chi tiết cấu hình"
@@ -383,7 +349,7 @@ Partial Class Form1
         Me.txtKetThuc.CustomFormat = "HH:mm:ss"
         Me.txtKetThuc.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.txtKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtKetThuc.Location = New System.Drawing.Point(210, 135)
+        Me.txtKetThuc.Location = New System.Drawing.Point(219, 131)
         Me.txtKetThuc.Name = "txtKetThuc"
         Me.txtKetThuc.ShowUpDown = True
         Me.txtKetThuc.Size = New System.Drawing.Size(80, 22)
@@ -393,22 +359,22 @@ Partial Class Form1
         '
         Me.chkTatMay.AutoSize = True
         Me.chkTatMay.ForeColor = System.Drawing.Color.Black
-        Me.chkTatMay.Location = New System.Drawing.Point(302, 136)
+        Me.chkTatMay.Location = New System.Drawing.Point(307, 132)
         Me.chkTatMay.Name = "chkTatMay"
-        Me.chkTatMay.Size = New System.Drawing.Size(75, 20)
+        Me.chkTatMay.Size = New System.Drawing.Size(78, 20)
         Me.chkTatMay.TabIndex = 14
-        Me.chkTatMay.Text = "Tắt máy"
+        Me.chkTatMay.Text = "Tắt máy "
         Me.chkTatMay.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(9, 177)
+        Me.Label6.Location = New System.Drawing.Point(8, 204)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 16)
+        Me.Label6.Size = New System.Drawing.Size(156, 16)
         Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Vào lúc"
+        Me.Label6.Text = "Ngày thực hiện trong tuần"
         '
         'GroupBox4
         '
@@ -419,9 +385,9 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.chkThuTu)
         Me.GroupBox4.Controls.Add(Me.chkThuBa)
         Me.GroupBox4.Controls.Add(Me.chkThuHai)
-        Me.GroupBox4.Location = New System.Drawing.Point(66, 161)
+        Me.GroupBox4.Location = New System.Drawing.Point(10, 222)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(355, 68)
+        Me.GroupBox4.Size = New System.Drawing.Size(375, 74)
         Me.GroupBox4.TabIndex = 12
         Me.GroupBox4.TabStop = False
         '
@@ -429,7 +395,7 @@ Partial Class Form1
         '
         Me.chkChuNhat.AutoSize = True
         Me.chkChuNhat.ForeColor = System.Drawing.Color.Black
-        Me.chkChuNhat.Location = New System.Drawing.Point(172, 41)
+        Me.chkChuNhat.Location = New System.Drawing.Point(179, 41)
         Me.chkChuNhat.Name = "chkChuNhat"
         Me.chkChuNhat.Size = New System.Drawing.Size(77, 20)
         Me.chkChuNhat.TabIndex = 17
@@ -440,7 +406,7 @@ Partial Class Form1
         '
         Me.chkThuBay.AutoSize = True
         Me.chkThuBay.ForeColor = System.Drawing.Color.Black
-        Me.chkThuBay.Location = New System.Drawing.Point(90, 41)
+        Me.chkThuBay.Location = New System.Drawing.Point(93, 41)
         Me.chkThuBay.Name = "chkThuBay"
         Me.chkThuBay.Size = New System.Drawing.Size(75, 20)
         Me.chkThuBay.TabIndex = 16
@@ -462,7 +428,7 @@ Partial Class Form1
         '
         Me.chkThuNam.AutoSize = True
         Me.chkThuNam.ForeColor = System.Drawing.Color.Black
-        Me.chkThuNam.Location = New System.Drawing.Point(241, 15)
+        Me.chkThuNam.Location = New System.Drawing.Point(258, 15)
         Me.chkThuNam.Name = "chkThuNam"
         Me.chkThuNam.Size = New System.Drawing.Size(78, 20)
         Me.chkThuNam.TabIndex = 14
@@ -473,7 +439,7 @@ Partial Class Form1
         '
         Me.chkThuTu.AutoSize = True
         Me.chkThuTu.ForeColor = System.Drawing.Color.Black
-        Me.chkThuTu.Location = New System.Drawing.Point(172, 15)
+        Me.chkThuTu.Location = New System.Drawing.Point(179, 15)
         Me.chkThuTu.Name = "chkThuTu"
         Me.chkThuTu.Size = New System.Drawing.Size(62, 20)
         Me.chkThuTu.TabIndex = 13
@@ -484,7 +450,7 @@ Partial Class Form1
         '
         Me.chkThuBa.AutoSize = True
         Me.chkThuBa.ForeColor = System.Drawing.Color.Black
-        Me.chkThuBa.Location = New System.Drawing.Point(90, 15)
+        Me.chkThuBa.Location = New System.Drawing.Point(93, 15)
         Me.chkThuBa.Name = "chkThuBa"
         Me.chkThuBa.Size = New System.Drawing.Size(68, 20)
         Me.chkThuBa.TabIndex = 12
@@ -512,7 +478,7 @@ Partial Class Form1
         Me.btnBatDau.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnBatDau.Image = CType(resources.GetObject("btnBatDau.Image"), System.Drawing.Image)
         Me.btnBatDau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBatDau.Location = New System.Drawing.Point(66, 261)
+        Me.btnBatDau.Location = New System.Drawing.Point(11, 328)
         Me.btnBatDau.Name = "btnBatDau"
         Me.btnBatDau.Size = New System.Drawing.Size(125, 32)
         Me.btnBatDau.TabIndex = 11
@@ -523,7 +489,7 @@ Partial Class Form1
         '
         Me.chkPhatNgauNhien.AutoSize = True
         Me.chkPhatNgauNhien.ForeColor = System.Drawing.Color.Black
-        Me.chkPhatNgauNhien.Location = New System.Drawing.Point(66, 235)
+        Me.chkPhatNgauNhien.Location = New System.Drawing.Point(11, 302)
         Me.chkPhatNgauNhien.Name = "chkPhatNgauNhien"
         Me.chkPhatNgauNhien.Size = New System.Drawing.Size(251, 20)
         Me.chkPhatNgauNhien.TabIndex = 10
@@ -532,7 +498,7 @@ Partial Class Form1
         '
         'txtThoiGian
         '
-        Me.txtThoiGian.Location = New System.Drawing.Point(338, 274)
+        Me.txtThoiGian.Location = New System.Drawing.Point(283, 339)
         Me.txtThoiGian.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.txtThoiGian.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtThoiGian.Name = "txtThoiGian"
@@ -545,7 +511,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(151, 138)
+        Me.Label4.Location = New System.Drawing.Point(160, 134)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 16)
         Me.Label4.TabIndex = 7
@@ -555,7 +521,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(9, 138)
+        Me.Label3.Location = New System.Drawing.Point(6, 132)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 16)
         Me.Label3.TabIndex = 6
@@ -566,7 +532,7 @@ Partial Class Form1
         Me.txtBatDau.CustomFormat = "HH:mm:ss"
         Me.txtBatDau.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.txtBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtBatDau.Location = New System.Drawing.Point(66, 135)
+        Me.txtBatDau.Location = New System.Drawing.Point(75, 131)
         Me.txtBatDau.Name = "txtBatDau"
         Me.txtBatDau.ShowUpDown = True
         Me.txtBatDau.Size = New System.Drawing.Size(79, 22)
@@ -578,7 +544,7 @@ Partial Class Form1
         Me.chkDangHoatDong.Checked = True
         Me.chkDangHoatDong.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkDangHoatDong.ForeColor = System.Drawing.Color.Black
-        Me.chkDangHoatDong.Location = New System.Drawing.Point(299, 26)
+        Me.chkDangHoatDong.Location = New System.Drawing.Point(244, 27)
         Me.chkDangHoatDong.Name = "chkDangHoatDong"
         Me.chkDangHoatDong.Size = New System.Drawing.Size(121, 20)
         Me.chkDangHoatDong.TabIndex = 4
@@ -589,17 +555,17 @@ Partial Class Form1
         '
         Me.txtMoTa.BackColor = System.Drawing.Color.White
         Me.txtMoTa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMoTa.Location = New System.Drawing.Point(66, 55)
+        Me.txtMoTa.Location = New System.Drawing.Point(75, 55)
         Me.txtMoTa.Multiline = True
         Me.txtMoTa.Name = "txtMoTa"
-        Me.txtMoTa.Size = New System.Drawing.Size(355, 70)
+        Me.txtMoTa.Size = New System.Drawing.Size(310, 70)
         Me.txtMoTa.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(9, 58)
+        Me.Label2.Location = New System.Drawing.Point(8, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 16)
         Me.Label2.TabIndex = 2
@@ -611,17 +577,17 @@ Partial Class Form1
         Me.txtTenCauHinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTenCauHinh.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTenCauHinh.ForeColor = System.Drawing.Color.Blue
-        Me.txtTenCauHinh.Location = New System.Drawing.Point(66, 25)
+        Me.txtTenCauHinh.Location = New System.Drawing.Point(75, 25)
         Me.txtTenCauHinh.Name = "txtTenCauHinh"
         Me.txtTenCauHinh.ReadOnly = True
-        Me.txtTenCauHinh.Size = New System.Drawing.Size(218, 22)
+        Me.txtTenCauHinh.Size = New System.Drawing.Size(163, 22)
         Me.txtTenCauHinh.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(9, 28)
+        Me.Label1.Location = New System.Drawing.Point(8, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(31, 16)
         Me.Label1.TabIndex = 0
@@ -629,9 +595,9 @@ Partial Class Form1
         '
         'st
         '
-        Me.st.Location = New System.Drawing.Point(0, 567)
+        Me.st.Location = New System.Drawing.Point(0, 675)
         Me.st.Name = "st"
-        Me.st.Size = New System.Drawing.Size(934, 22)
+        Me.st.Size = New System.Drawing.Size(899, 22)
         Me.st.TabIndex = 2
         Me.st.Text = "StatusStrip1"
         '
@@ -642,7 +608,7 @@ Partial Class Form1
         Me.tt1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnThuVienBaiHat, Me.btnThemMoiTacVu, Me.ToolStripSeparator2, Me.btnChayTacVu, Me.btnXoaTacVu, Me.ToolStripSeparator1, Me.btnThoat})
         Me.tt1.Location = New System.Drawing.Point(0, 0)
         Me.tt1.Name = "tt1"
-        Me.tt1.Size = New System.Drawing.Size(934, 28)
+        Me.tt1.Size = New System.Drawing.Size(899, 28)
         Me.tt1.TabIndex = 2
         Me.tt1.Text = "ToolStrip1"
         '
@@ -706,17 +672,66 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(926, 28)
+        Me.Panel1.Location = New System.Drawing.Point(891, 28)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(8, 539)
+        Me.Panel1.Size = New System.Drawing.Size(8, 647)
         Me.Panel1.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(8, 176)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(63, 16)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Âm lượng"
+        '
+        'amluong
+        '
+        Me.amluong.Location = New System.Drawing.Point(66, 179)
+        Me.amluong.Maximum = 100
+        Me.amluong.Name = "amluong"
+        Me.amluong.Size = New System.Drawing.Size(319, 45)
+        Me.amluong.TabIndex = 17
+        Me.amluong.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.amluong.Value = 100
+        '
+        'lblAmLuong
+        '
+        Me.lblAmLuong.AutoSize = True
+        Me.lblAmLuong.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAmLuong.ForeColor = System.Drawing.Color.Maroon
+        Me.lblAmLuong.Location = New System.Drawing.Point(92, 164)
+        Me.lblAmLuong.Name = "lblAmLuong"
+        Me.lblAmLuong.Size = New System.Drawing.Size(223, 16)
+        Me.lblAmLuong.TabIndex = 18
+        Me.lblAmLuong.Text = "( Phát theo 100% âm lượng máy tính )"
+        '
+        'btnThietLapAmLuong
+        '
+        Me.btnThietLapAmLuong.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.btnThietLapAmLuong.Image = CType(resources.GetObject("btnThietLapAmLuong.Image"), System.Drawing.Image)
+        Me.btnThietLapAmLuong.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnThietLapAmLuong.Name = "btnThietLapAmLuong"
+        Me.btnThietLapAmLuong.Size = New System.Drawing.Size(140, 22)
+        Me.btnThietLapAmLuong.Text = "Thiết lập âm lượng riêng"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 589)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(899, 697)
+        Me.Controls.Add(Me.gDsBaiHat)
+        Me.Controls.Add(Me.lstTask)
+        Me.Controls.Add(Me.gChiTietCauHinh)
+        Me.Controls.Add(Me.gThuMuc)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.tt1)
         Me.Controls.Add(Me.st)
@@ -724,14 +739,6 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "BAC PLAYER REMOTE"
         Me.gThuMuc.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
-        Me.SplitContainer2.Panel1.ResumeLayout(False)
-        Me.SplitContainer2.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer2.ResumeLayout(False)
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.gDsBaiHat.ResumeLayout(False)
         Me.gDsBaiHat.PerformLayout()
@@ -744,19 +751,17 @@ Partial Class Form1
         CType(Me.txtThoiGian, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tt1.ResumeLayout(False)
         Me.tt1.PerformLayout()
+        CType(Me.amluong, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents gThuMuc As System.Windows.Forms.GroupBox
     Friend WithEvents cmbTrangThai As System.Windows.Forms.ComboBox
-    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents treeThuMuc As System.Windows.Forms.TreeView
     Friend WithEvents st As System.Windows.Forms.StatusStrip
     Friend WithEvents tt1 As System.Windows.Forms.ToolStrip
     Friend WithEvents btnThuVienBaiHat As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents lstTask As System.Windows.Forms.ListView
     Friend WithEvents colTen As System.Windows.Forms.ColumnHeader
@@ -802,4 +807,10 @@ Partial Class Form1
     Friend WithEvents mDungHoacHoatDong As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents chkTatMay As CheckBox
     Friend WithEvents txtKetThuc As DateTimePicker
+    Friend WithEvents Label5 As Label
+    Friend WithEvents amluong As TrackBar
+    Friend WithEvents lblAmLuong As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnThietLapAmLuong As ToolStripButton
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
 End Class

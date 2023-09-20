@@ -19,6 +19,7 @@ Public Class Form1
         chkThuBay.Checked = False
         chkChuNhat.Checked = False
         lstMp3.Items.Clear()
+        amluong.Value = 100
     End Sub
 
 
@@ -150,7 +151,7 @@ Public Class Form1
 
 
         Try
-            Dim strParm As String = CType(t.Definition.Actions(0), ExecAction).Arguments
+            Dim strParm As String = CType(t.Definition.Actions(1), ExecAction).Arguments
             chkPhatNgauNhien.Checked = Convert.ToByte(strParm.Substring(0, 1))
             Dim strTg As String = strParm.Substring(2)
             strTg = strTg.Substring(0, strTg.IndexOf(" "))
@@ -159,6 +160,10 @@ Public Class Form1
             Dim strTatMay As String = strParm.Substring(2)
             strTatMay = strTatMay.Substring(strTatMay.IndexOf(" ") + 1)
             chkTatMay.Checked = Convert.ToByte(strTatMay.Substring(0, strTatMay.IndexOf(" ")))
+            Dim arrPrm As String() = strParm.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+            Dim strAmLuong As String = arrPrm(3)
+            amluong.Value = Convert.ToInt32(strAmLuong)
+
             lstMp3.Items.Clear()
             Try
                 Dim strMp3 As String = strParm.Substring(strParm.IndexOf("""") + 1)
@@ -207,9 +212,12 @@ Public Class Form1
             trig.DaysOfWeek = ngay
             task.Definition.Triggers.RemoveAt(0)
             task.Definition.Triggers.Add(trig)
-            Dim act As ExecAction = CType(task.Definition.Actions(0).Clone, ExecAction)
-            act.Path = Application.StartupPath & "\BAC_PLAYER_MP3.exe"
-            act.Arguments = Convert.ToByte(chkPhatNgauNhien.Checked).ToString & " " & txtThoiGian.Value.ToString.Replace(",", "").Replace(".", "") & " " & Convert.ToByte(chkTatMay.Checked).ToString & " "
+            Dim act1 As ExecAction = CType(task.Definition.Actions(0).Clone, ExecAction)
+            Dim act2 As ExecAction = CType(task.Definition.Actions(1).Clone, ExecAction)
+            act1.Path = "taskkill"
+            act1.Arguments = "/im BAC_PLAYER_MP3.exe"
+            act2.Path = Application.StartupPath & "\BAC_PLAYER_MP3.exe"
+            act2.Arguments = Convert.ToByte(chkPhatNgauNhien.Checked).ToString & " " & txtThoiGian.Value.ToString.Replace(",", "").Replace(".", "") & " " & Convert.ToByte(chkTatMay.Checked).ToString & " " & amluong.Value & " "
             Dim _lstNhac As String = ""
             For Each i As ListViewItem In lstMp3.Items
                 _lstNhac &= i.Text & ";"
@@ -219,9 +227,10 @@ Public Class Form1
                 taskServices.Dispose()
                 Exit Sub
             End If
-            act.Arguments &= """" & _lstNhac & """"
-            task.Definition.Actions.RemoveAt(0)
-            task.Definition.Actions.Add(act)
+            act2.Arguments &= """" & _lstNhac & """"
+            task.Definition.Actions.Clear()
+            task.Definition.Actions.Add(act1)
+            task.Definition.Actions.Add(act2)
             task.RegisterChanges()
             MessageBox.Show("Cập nhật thành công !")
             treeThuMuc_AfterSelect(treeThuMuc, New TreeViewEventArgs(treeThuMuc.SelectedNode))
@@ -256,9 +265,12 @@ Public Class Form1
                 End If
                 trig.DaysOfWeek = ngay
                 task.Triggers.Add(trig)
-                Dim act As New ExecAction
-                act.Path = Application.StartupPath & "\BAC_PLAYER_MP3.exe"
-                act.Arguments = Convert.ToByte(chkPhatNgauNhien.Checked).ToString & " " & txtThoiGian.Value.ToString.Replace(",", "").Replace(".", "") & " " & Convert.ToByte(chkTatMay.Checked).ToString & " "
+                Dim act1 As New ExecAction
+                act1.Path = "taskkill"
+                act1.Arguments = "/im BAC_PLAYER_MP3.exe"
+                Dim act2 As New ExecAction
+                act2.Path = Application.StartupPath & "\BAC_PLAYER_MP3.exe"
+                act2.Arguments = Convert.ToByte(chkPhatNgauNhien.Checked).ToString & " " & txtThoiGian.Value.ToString.Replace(",", "").Replace(".", "") & " " & Convert.ToByte(chkTatMay.Checked).ToString & " " & amluong.Value & " "
                 Dim _lstNhac As String = ""
                 For Each i As ListViewItem In lstMp3.Items
                     _lstNhac &= i.Text & ";"
@@ -268,8 +280,9 @@ Public Class Form1
                     taskServices.Dispose()
                     Exit Sub
                 End If
-                act.Arguments &= """" & _lstNhac & """"
-                task.Actions.Add(act)
+                act2.Arguments &= """" & _lstNhac & """"
+                task.Actions.Add(act1)
+                task.Actions.Add(act2)
                 taskServices.GetFolder("BACPLAYER").RegisterTaskDefinition(txtTenCauHinh.Text, task)
                 MessageBox.Show("Cập nhật thành công !")
                 treeThuMuc_AfterSelect(treeThuMuc, New TreeViewEventArgs(treeThuMuc.SelectedNode))
@@ -327,6 +340,7 @@ Public Class Form1
             Dim strListMp3 As String = f.strListMp3
             For Each s As String In strListMp3.Split(";")
                 If s.Trim = "" Then Continue For
+                s = "[   ]. " & s
                 lstMp3.Items.Add(s)
             Next
         End If
@@ -405,5 +419,24 @@ Public Class Form1
 
     Private Sub txtKetThuc_ValueChanged(sender As Object, e As EventArgs) Handles txtKetThuc.ValueChanged
         'TinhThoiGian()
+    End Sub
+
+    Private Sub amluong_Scroll(sender As Object, e As EventArgs) Handles amluong.Scroll
+
+    End Sub
+
+    Private Sub amluong_ValueChanged(sender As Object, e As EventArgs) Handles amluong.ValueChanged
+        lblAmLuong.Text = "( Phát theo " & amluong.Value & "% âm lượng máy tính )"
+    End Sub
+
+    Private Sub btnThietLapAmLuong_Click(sender As Object, e As EventArgs) Handles btnThietLapAmLuong.Click
+        If lstMp3.SelectedItems.Count = 0 Then Exit Sub
+        Dim index = lstMp3.SelectedItems(0).Index
+        Dim str As String = lstMp3.SelectedItems(0).Text
+        Dim f As New frmAmLuongFile
+        f.fileName = str
+        If f.ShowDialog() = DialogResult.OK Then
+            lstMp3.SelectedItems(0).Text = f.fileKetQua
+        End If
     End Sub
 End Class
